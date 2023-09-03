@@ -1,11 +1,14 @@
 package com.example.dealspotter.ui;
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -112,6 +115,8 @@ public class DetailFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
 
@@ -119,6 +124,14 @@ public class DetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        AppCompatActivity activity = (AppCompatActivity) requireActivity();
+        Toolbar toolbar = activity.findViewById(R.id.toolbar);
+
+        activity.setSupportActionBar(toolbar);
+        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        activity.getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
         txtusername = view.findViewById(R.id.detailownername);
         homeprofileimg = view.findViewById(R.id.detailownerpic);

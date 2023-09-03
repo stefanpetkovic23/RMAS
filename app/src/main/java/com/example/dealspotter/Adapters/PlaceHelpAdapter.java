@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -83,6 +84,7 @@ public class PlaceHelpAdapter extends RecyclerView.Adapter<PlaceHelpAdapter.MyVi
             public void onClick(View view) {
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DetailFragment(place.getTitle(), place.getAdress(), place.getNumberofrooms(),place.getNumberofbathrooms(),place.getGarage(),place.getSurface(), place.getDescription(), place.getPhotoURL(), place.getPrice(), place.getOwner())).addToBackStack(null).commit();
+
             }
         });
 

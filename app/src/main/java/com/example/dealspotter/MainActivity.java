@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity  {
 
       //  fab = findViewById(R.id.fab);
         toolbar = findViewById(R.id.toolbar);
-       setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
+
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -74,12 +75,7 @@ public class MainActivity extends AppCompatActivity  {
         fragmentManager = getSupportFragmentManager();
         openFragment(new AboutFragment());
 
-/*        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Test",Toast.LENGTH_LONG).show();
-            }
-        });*/
+
     }
 
 
@@ -93,5 +89,17 @@ public class MainActivity extends AppCompatActivity  {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fragment_container,fragment);
         transaction.commit();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // Handle the back button press
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

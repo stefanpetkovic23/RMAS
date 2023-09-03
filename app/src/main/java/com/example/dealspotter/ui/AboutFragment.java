@@ -5,7 +5,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -88,6 +90,13 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about, container, false);
+
+        AppCompatActivity activity = (AppCompatActivity) requireActivity();
+        Toolbar toolbar = activity.findViewById(R.id.toolbar);
+
+        activity.setSupportActionBar(toolbar);
+        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        activity.getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         placerecycle = view.findViewById(R.id.placeRecycler);
         searchView = view.findViewById(R.id.searchView);

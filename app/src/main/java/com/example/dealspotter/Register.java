@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -49,6 +52,10 @@ public class Register extends AppCompatActivity {
     private StorageTask uploadtask;
 
     private static final int REQUEST_GALLERY = 1;
+
+    private static final int REQUEST_CAMERA_PERMISSION = 101;
+    private static final int REQUEST_GALLERY1 = 1;
+    private static final int REQUEST_CAMERA = 2;
 
 
     private StorageReference storageReference;
@@ -136,21 +143,110 @@ public class Register extends AppCompatActivity {
     }
 
     private void choosePicture() {
-        Intent intent = new Intent();
+    /*    Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
+        startActivityForResult(intent,1); */
 
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
+        } else {
+            // Permission granted, show options to choose from
+            showImagePickerDialog();
+        }
+
+    }
+
+    private void showImagePickerDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Image Source");
+
+        final String[] options = {"Camera", "Gallery"};
+
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (options[which].equals("Camera")) {
+                    openCamera();
+                } else if (options[which].equals("Gallery")) {
+                    openGallery();
+                }
+            }
+        });
+
+        builder.show();
+    }
+
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_CAMERA_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted, show options to choose from
+                showImagePickerDialog();
+            } else {
+                // Permission denied, show a message to the user
+                Toast.makeText(this, "Camera permission denied.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void openCamera() {
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, REQUEST_CAMERA);
+    }
+
+    private void openGallery() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(galleryIntent, REQUEST_GALLERY);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+        /*if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
             imageUri=data.getData();
             myUri=imageUri.toString();
             photo.setImageURI(imageUri);
+        }*/
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_GALLERY) {
+                // Image selected from gallery
+                if (data != null && data.getData() != null) {
+                    imageUri = data.getData();
+                    myUri = imageUri.toString();
+                    photo.setImageURI(imageUri);
+                }
+            } else if (requestCode == REQUEST_CAMERA) {
+                // Image captured from camera
+                if (data != null && data.getExtras() != null) {
+                    Bitmap photoBitmap = (Bitmap) data.getExtras().get("data");
+                    if (photoBitmap != null) {
+                        imageUri = bitmapToUriConverter(photoBitmap);
+
+                        // Now you can use the 'imageUri' for further processing or display
+                        myUri = imageUri.toString();
+                        photo.setImageURI(imageUri);
+                    }
+                }
+            }
         }
+    }
+    private Uri bitmapToUriConverter(Bitmap bitmap) {
+        Uri uri = null;
+        try {
+            final BitmapFactory.Options options = new BitmapFactory.Options();
+            // Calculate inSampleSize
+            options.inSampleSize = 8;
+            // Decode bitmap with inSampleSize set
+            options.inJustDecodeBounds = false;
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+            String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+            uri = Uri.parse(path);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return uri;
     }
 
 

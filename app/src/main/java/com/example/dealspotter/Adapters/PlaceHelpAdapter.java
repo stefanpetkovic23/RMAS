@@ -105,7 +105,7 @@ public class PlaceHelpAdapter extends RecyclerView.Adapter<PlaceHelpAdapter.MyVi
 
 
     private void populateFavoriteStatusMap() {
-        // Query user's favorites from Firebase and populate favoriteStatusMap
+
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = auth.getCurrentUser();
         String userID = firebaseUser.getUid();
@@ -120,7 +120,7 @@ public class PlaceHelpAdapter extends RecyclerView.Adapter<PlaceHelpAdapter.MyVi
                         favoriteStatusMap.put(favorite.getPropertyKey(), favorite);
                     }
                 }
-                notifyDataSetChanged(); // Update the adapter to reflect favorite status
+                notifyDataSetChanged();
             }
 
             @Override
@@ -137,11 +137,11 @@ public class PlaceHelpAdapter extends RecyclerView.Adapter<PlaceHelpAdapter.MyVi
         DatabaseReference favoritesRef = FirebaseDatabase.getInstance("https://deal-spotter-68691-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Favorites");
         DatabaseReference userFavoritesRef = favoritesRef.child(userID).child(place.getTitle());
         if (favoriteStatusMap.containsKey(place.getTitle())) {
-            // Property is currently favorite, remove from favorites
+
             userFavoritesRef.removeValue();
             favoriteStatusMap.remove(place.getTitle());
         } else {
-            // Property is not favorite, add to favorites
+
             Favorites favorite = new Favorites(place.getTitle(), true);
             userFavoritesRef.setValue(favorite);
             favoriteStatusMap.put(place.getTitle(), favorite);

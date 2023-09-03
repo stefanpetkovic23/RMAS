@@ -101,7 +101,7 @@ public class FavoriteFragment extends Fragment {
         FirebaseUser firebaseUser = auth.getCurrentUser();
         String userID = firebaseUser.getUid();
         favoritesRef = FirebaseDatabase.getInstance("https://deal-spotter-68691-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Favorites")
-                .child(userID); // Update with your user ID
+                .child(userID);
         placesRef = FirebaseDatabase.getInstance("https://deal-spotter-68691-default-rtdb.europe-west1.firebasedatabase.app/")
                 .getReference("Places");
 

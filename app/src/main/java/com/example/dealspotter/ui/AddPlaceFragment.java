@@ -258,7 +258,7 @@ public class AddPlaceFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // Title already exists, show an error message
+
                     edttitle.setError("Title is already in use!");
                     edttitle.requestFocus();
                 } else {
@@ -268,7 +268,7 @@ public class AddPlaceFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle database error if needed
+
             }
         });
     }

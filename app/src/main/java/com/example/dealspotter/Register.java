@@ -54,7 +54,7 @@ public class Register extends AppCompatActivity {
     private static final int REQUEST_GALLERY = 1;
 
     private static final int REQUEST_CAMERA_PERMISSION = 101;
-    private static final int REQUEST_GALLERY1 = 1;
+    //private static final int REQUEST_GALLERY1 = 1;
     private static final int REQUEST_CAMERA = 2;
 
 
@@ -151,7 +151,7 @@ public class Register extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
         } else {
-            // Permission granted, show options to choose from
+
             showImagePickerDialog();
         }
 
@@ -181,10 +181,10 @@ public class Register extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, show options to choose from
+
                 showImagePickerDialog();
             } else {
-                // Permission denied, show a message to the user
+
                 Toast.makeText(this, "Camera permission denied.", Toast.LENGTH_SHORT).show();
             }
         }
@@ -217,13 +217,13 @@ public class Register extends AppCompatActivity {
                     photo.setImageURI(imageUri);
                 }
             } else if (requestCode == REQUEST_CAMERA) {
-                // Image captured from camera
+
                 if (data != null && data.getExtras() != null) {
                     Bitmap photoBitmap = (Bitmap) data.getExtras().get("data");
                     if (photoBitmap != null) {
                         imageUri = bitmapToUriConverter(photoBitmap);
 
-                        // Now you can use the 'imageUri' for further processing or display
+
                         myUri = imageUri.toString();
                         photo.setImageURI(imageUri);
                     }
@@ -235,9 +235,9 @@ public class Register extends AppCompatActivity {
         Uri uri = null;
         try {
             final BitmapFactory.Options options = new BitmapFactory.Options();
-            // Calculate inSampleSize
+
             options.inSampleSize = 8;
-            // Decode bitmap with inSampleSize set
+
             options.inJustDecodeBounds = false;
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);

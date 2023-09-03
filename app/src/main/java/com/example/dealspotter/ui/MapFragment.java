@@ -309,7 +309,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 .center(userLocation)
                 .radius(radiusInMeters)
                 .strokeColor(Color.BLACK)
-                .fillColor(Color.parseColor("#500084d3")); // Change color and transparency as needed
+                .fillColor(Color.parseColor("#500084d3"));
         myMap.addCircle(circleOptions);
         databaseReference = FirebaseDatabase.getInstance("https://deal-spotter-68691-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Places");
         databaseReference.addValueEventListener(new ValueEventListener() {

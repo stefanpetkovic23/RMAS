@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/leaderboarditem">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="20dp"
+        android:elevation="8dp">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/pozadina"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="@color/lightgreen">
+
+           <TextView
+               android:id="@+id/position"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:text="1"
+               android:textColor="@color/white"
+               android:textSize="25dp"
+               android:textStyle="bold"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageView
+               android:id="@+id/leaderboardimage"
+               android:layout_width="60dp"
+               android:layout_height="60dp"
+               android:layout_marginLeft="10dp"
+               android:scaleType="centerCrop"
+               android:background="@drawable/imagebackground"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toEndOf="@+id/position"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/leaderboardusername"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/username"
+               android:textSize="25dp"
+               android:textStyle="bold"
+               android:layout_marginLeft="15dp"
+               android:layout_marginTop="10dp"
+               android:textColor="@color/white"
+               app:layout_constraintStart_toEndOf="@+id/leaderboardimage"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/Pointslabel"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/points"
+               android:textSize="25dp"
+               android:textStyle="bold"
+               android:layout_marginLeft="15dp"
+               android:layout_marginTop="5dp"
+               android:textColor="@color/white"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toEndOf="@+id/leaderboardimage"
+               app:layout_constraintTop_toBottomOf="@+id/leaderboardusername" />
+
+           <TextView
+               android:id="@+id/Points"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="5dp"
+               android:text="TextView"
+               android:layout_marginBottom="10dp"
+               android:textColor="@color/white"
+               android:textSize="25dp"
+               android:textStyle="bold"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toEndOf="@+id/Pointslabel" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

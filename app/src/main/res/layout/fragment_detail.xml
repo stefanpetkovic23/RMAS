@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/placedetailimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/pexels_pixabay_258154"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:background="#70000000"
+                    app:layout_constraintBottom_toBottomOf="@+id/placedetailimage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/detailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tittle"
+                    android:textColor="@color/white"
+                    android:textSize="22dp"
+                    android:layout_marginStart="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toTopOf="@+id/view" />
+
+                <ImageView
+                    android:id="@+id/detailadressimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:padding="2dp"
+                    android:src="@drawable/baseline_location_on_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailTitle"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/detailadress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/detailadressimage"
+                    app:layout_constraintTop_toBottomOf="@+id/detailTitle" />
+
+                <ImageView
+                    android:id="@+id/detailrate"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/baseline_star_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/detailprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$15000"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal">
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="12dp"
+                        android:columnCount="4"
+                        android:rowCount="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/detailcdrooms"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_margin="5dp"
+                            android:layout_rowWeight="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/baseline_bed_24"
+                                    android:layout_gravity="center_horizontal"/>
+
+                                <TextView
+                                    android:id="@+id/detailrooms"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="5"
+                                    android:textColor="@color/black"
+                                    android:textSize="22dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/detailcdbathroom"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="1"
+                            android:layout_margin="5dp"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/baseline_bathtub_24"
+                                    android:layout_gravity="center_horizontal"/>
+
+                                <TextView
+                                    android:id="@+id/detailbathroom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="5"
+                                    android:textColor="@color/black"
+                                    android:textSize="22dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/detailcdgarage"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="2"
+                            android:layout_margin="5dp"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/baseline_garage_24"
+                                    android:layout_gravity="center_horizontal"/>
+
+                                <TextView
+                                    android:id="@+id/detailgarage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="5"
+                                    android:textColor="@color/black"
+                                    android:textSize="22dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/detailcdsurface"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_rowWeight="1"
+                            android:layout_column="3"
+                            android:layout_margin="5dp"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/icons8_surface_50"
+                                    android:layout_gravity="center_horizontal"/>
+
+                                <TextView
+                                    android:id="@+id/detailsurface"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="500m^2"
+                                    android:textColor="@color/black"
+                                    android:textSize="22dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/descriptionlabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginStart="32dp"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Priuštite sebi luksuz po ceni običnog stana na osnovu uštede u mesečnim troškovima,jer su troškovi manji zahvaljujući upotrebi solarne energije i mnogih drugih inovativnih rešenja u gradnji i upotrebi zgrade. Ovde sigurno štedite 80 do 100 eura i možete smatrati da za toliko manje realno plaćate mesečni zakup u odnosu na druge ponude sa nominalno manjim cenama zakupa."
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate of property"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16dp"
+                android:textColor="@color/black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+                <RatingBar
+                    android:id="@+id/ratingbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:progressTint="#ffd27d"
+                    android:layout_marginTop="8dp"
+                    android:isIndicator="true"/>
+                <TextView
+                    android:id="@+id/ratingscore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"/>
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/homecategory"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp">
+
+                <ImageView
+                    android:id="@+id/detailownerpic"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/imagebackground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="@string/owner"
+                    android:textSize="16dp"
+                    app:layout_goneMarginStart="32dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/detailownerpic"
+                    app:layout_constraintTop_toTopOf="@+id/detailownerpic" />
+
+                <TextView
+                    android:id="@+id/detailownername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <ImageView
+                    android:id="@+id/ownercall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/baseline_phone_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                >
+
+                <ImageView
+                    android:id="@+id/detailownerpicforcomment"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/imagebackground"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <EditText
+                    android:id="@+id/editTextcomment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:ems="10"
+                    android:layout_marginStart="8dp"
+                    android:inputType="textMultiLine"
+                    android:lines="2"
+                    android:hint="Write comment"
+                    android:textSize="20dp"
+                    android:paddingStart="8dp"
+                    android:background="@drawable/homecategory"
+                    app:layout_constraintBottom_toBottomOf="@+id/detailownerpicforcomment"
+                    app:layout_constraintStart_toEndOf="@+id/detailownerpicforcomment"
+                    app:layout_constraintTop_toTopOf="@+id/detailownerpicforcomment" />
+
+                <ImageView
+                    android:id="@+id/addcommentimg"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/baseline_add_comment_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextcomment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/editTextcomment"
+                    app:layout_constraintTop_toTopOf="@+id/editTextcomment"
+                    app:tint="#E8E5E1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/allcomments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/allcomments"
+                android:textSize="16dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

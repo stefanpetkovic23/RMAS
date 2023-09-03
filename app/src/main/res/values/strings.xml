@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Deal Spotter</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="don_t_have_account_yet">Don\'t have account yet?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="username">Username</string>
+    <string name="phone_number">Phone number</string>
+    <string name="e_mail">E-mail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="points">Points :</string>
+    <string name="search">Searching for...</string>
+    <string name="house">House</string>
+    <string name="apartment">Apartment</string>
+    <string name="villa">Villa</string>
+    <string name="premises">Premises</string>
+    <string name="popular">Popular</string>
+    <string name="seeall">See all</string>
+    <string name="newestate">New</string>
+    <string name="description">Description</string>
+    <string name="owner">Owner of property</string>
+    <string name="my_map_api_key">AIzaSyBZH9lbAcLi_Zjrpu64GcxjXrLylQurEoY</string>
+    <string name="address">Address</string>
+    <string name="rooms">Number of rooms</string>
+    <string name="garage">Number of garages</string>
+    <string name="surface">Surface of building</string>
+    <string name="bathroom">Number of bathrooms</string>
+    <string name="titleofplace">Title</string>
+    <string name="price">Price</string>
+    <string name="numberofproperty">Added estates</string>
+    <string name="pointss">Points</string>
+    <string name="rate">RATE PROPERTY</string>
+    <string name="comments">Comments</string>
+    <string name="allcomments">See all comments</string>
+    <string name="pointsranking">See points ranking system</string>
+    <string name="commentpoints">Points for comment :</string>
+    <string name="pointsrate">Points for rating property</string>
+    <string name="pointsproperty">Points for adding property</string>
+    <string name="favorite">Favorites</string>
+    <string name="morgage">Mortgage calculator</string>
+    <string name="result_format">Monthly Payment: %s</string>
+</resources>

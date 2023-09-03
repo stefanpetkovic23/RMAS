@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "752079728904",
+    "project_id": "deal-spotter-68691",
+    "storage_bucket": "deal-spotter-68691.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752079728904:android:d6b5c581f5ff6b24c3fcbd",
+        "android_client_info": {
+          "package_name": "com.example.dealspotter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752079728904-s3jp84q66erg4jdckf5rnf2rn9af6ep6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyPio3sz9-IdmqzEXIH1FxZaDMhDBzIN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752079728904-s3jp84q66erg4jdckf5rnf2rn9af6ep6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

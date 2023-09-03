@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.MorgageCalculatorFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mortgage Calculator"
+        android:textSize="24dp"
+        android:textColor="#333"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+    <EditText
+        android:id="@+id/editTextPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Principal Amount"
+
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextInterestRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Interest Rate (%)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextLoanTerm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Loan Term (Years)"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#007AFF"
+        android:textColor="#FFFFFF"
+        android:text="Calculate" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text=""
+        android:textSize="18dp" />
+
+</LinearLayout>

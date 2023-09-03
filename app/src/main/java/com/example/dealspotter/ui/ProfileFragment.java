@@ -125,7 +125,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 MorgageCalculatorFragment newFragment = new MorgageCalculatorFragment();
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, newFragment); // R.id.fragment_container is the ID of the container in your layout
+                transaction.replace(R.id.fragment_container, newFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

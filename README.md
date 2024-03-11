@@ -12,3 +12,16 @@ Android mobilna aplikacija za potrebe oglašavanja nekretnina. Projekat je rađe
  * Prisustvo leaderboarda za rangiranje oglašavača
 # Screenshots
 <img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204230_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204239_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204319_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204355_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204409_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204426_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204519_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204548_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204639_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204656_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204714_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204725_Deal%20Spotter.jpg" width="720" height="1200"/>
+<img src="https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204755_Deal%20Spotter.jpg" width="720" height="1200"/>
+

@@ -10,4 +10,5 @@ Android mobilna aplikacija za potrebe oglašavanja nekretnina. Projekat je rađe
  * Dodavanje nekretnine za prodaju
  * Mogućnost dodavanja nekretnina u favorite
  * Prisustvo leaderboarda za rangiranje oglašavača
-
+# Screenshots
+![image](https://github.com/stefanpetkovic23/RMAS/blob/master/App%20screenshots/Screenshot_20240311_204230_Deal%20Spotter.jpg)
